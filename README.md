@@ -1,73 +1,32 @@
-# Welcome to your Lovable project
+# therealmangoosey - Minecraft PaperMC Plugins
 
-## Project info
+Hey there! 👋 I'm **therealmangoosey**, and I love creating fun and useful plugins for Minecraft PaperMC servers.
 
-**URL**: https://lovable.dev/projects/85194568-e7f9-4f36-b020-a96ccf98439f
+You can find my plugins on:
 
-## How can I edit this code?
+* **Modrinth:** [https://modrinth.com/user/therealmangoosey](https://modrinth.com/user/therealmangoosey)
+* **Alternative Modrinth Link:** [modrinth.fruitsnacks.xyz](modrinth.fruitsnacks.xyz)
 
-There are several ways of editing your application.
+## What kind of plugins do I make?
 
-**Use Lovable**
+I enjoy developing a variety of plugins, often focusing on:
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/85194568-e7f9-4f36-b020-a96ccf98439f) and start prompting.
+* Gameplay enhancements
+* Server utilities
+* Unique and creative features
 
-Changes made via Lovable will be committed automatically to this repo.
+Check out my Modrinth page to see my current projects!
 
-**Use your preferred IDE**
+## Support and Contributions
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+If you encounter any issues or have suggestions for my plugins, please join the **Fruitsnacks Discord server** for support:
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+* **Discord:** [dsc.gg/fruitsnacks](dsc.gg/fruitsnacks)
 
-Follow these steps:
+Contributions and feedback are always welcome! Feel free to discuss your ideas and suggestions on the Discord server.
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## Stay Updated!
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+Follow my Modrinth page to stay up-to-date on my latest plugin releases and updates. Join the Discord server for more direct interaction and community updates!
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/85194568-e7f9-4f36-b020-a96ccf98439f) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+Thanks for checking out my work! 😊
