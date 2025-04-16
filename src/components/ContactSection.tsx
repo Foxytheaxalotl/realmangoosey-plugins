@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Github, Mail } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 const ContactSection = () => {
   return (
@@ -8,30 +8,10 @@ const ContactSection = () => {
       <div className="max-w-3xl mx-auto text-center">
         <h2 className="text-3xl font-bold mb-4">Get In Touch</h2>
         <p className="text-muted-foreground text-lg mb-8">
-          Have questions about my plugins or need support? Feel free to reach out through these channels.
+          Have questions about my plugins or need support? Feel free to reach out on Modrinth.
         </p>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <a 
-            href="https://github.com/therealmangoosey" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="group"
-          >
-            <div className="bg-card p-6 rounded-lg border border-border group-hover:border-primary/50 transition-all">
-              <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                <Github className="h-6 w-6 text-primary" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">GitHub</h3>
-              <p className="text-muted-foreground mb-4">
-                Open issues on GitHub for bug reports or feature requests.
-              </p>
-              <Button variant="outline" className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-all">
-                Visit GitHub <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </div>
-          </a>
-          
+        <div className="grid grid-cols-1 sm:grid-cols-1 gap-4">
           <a 
             href="https://modrinth.com/user/therealmangoosey" 
             target="_blank" 

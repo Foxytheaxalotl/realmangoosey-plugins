@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Download, Github, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
 
 const Navbar = () => {
@@ -29,15 +29,6 @@ const Navbar = () => {
             className="text-foreground/80 hover:text-foreground transition flex items-center gap-1"
           >
             <span>Modrinth</span>
-          </a>
-          <a 
-            href="https://github.com/therealmangoosey" 
-            target="_blank" 
-            rel="noopener noreferrer"
-          >
-            <Button variant="ghost" size="icon">
-              <Github className="h-5 w-5" />
-            </Button>
           </a>
         </div>
 
@@ -84,15 +75,6 @@ const Navbar = () => {
             onClick={() => setIsMenuOpen(false)}
           >
             Modrinth
-          </a>
-          <a 
-            href="https://github.com/therealmangoosey" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 p-2 hover:bg-muted rounded-md transition"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            GitHub
           </a>
         </div>
       )}
