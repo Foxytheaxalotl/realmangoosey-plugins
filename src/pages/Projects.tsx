@@ -2,14 +2,20 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ProjectCard from "@/components/ProjectCard";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, MessageSquare } from "lucide-react";
 import { Link } from "react-router-dom";
-
-// Minecraft/Modrinth-themed placeholder images
-const PROJECT_IMAGE = "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80";
-const FUTURE_IMAGE = "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80";
+import { useQuery } from "@tanstack/react-query";
+import { fetchModrinthUserProjects } from "@/utils/modrinth";
+import { Button } from "@/components/ui/button";
+import { Skeleton } from "@/components/ui/skeleton";
 
 const Projects = () => {
+  const { data: projects, isLoading } = useQuery({
+    queryKey: ['modrinth-projects'],
+    queryFn: () => fetchModrinthUserProjects('therealmangoosey'),
+    refetchInterval: 300000, // Refetch every 5 minutes
+  });
+
   return (
     <div className="flex min-h-screen flex-col bg-background">
       <Navbar />
@@ -22,28 +28,46 @@ const Projects = () => {
           </Link>
         </div>
         
-        <h1 className="text-4xl font-bold mb-2">Projects</h1>
-        <p className="text-muted-foreground text-lg mb-8">
-          Browse all my Minecraft plugins and mods, available for free on Modrinth.
-        </p>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <ProjectCard 
-            title="Forge Plugin"
-            description="A powerful plugin for Minecraft Forge servers that adds new functionality and features."
-            imageUrl={PROJECT_IMAGE}
-            downloads={1000}
-            url="https://modrinth.com/user/therealmangoosey"
-          />
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
+          <div>
+            <h1 className="text-4xl font-bold mb-2">Projects</h1>
+            <p className="text-muted-foreground text-lg">
+              Browse all my Paper MC plugins, available for free on Modrinth.
+            </p>
+          </div>
           
-          <ProjectCard 
-            title="Coming Soon!"
-            description="More exciting plugins are in development. Check back soon for updates and new releases."
-            imageUrl={FUTURE_IMAGE}
-            downloads={0}
-            url="https://modrinth.com/user/therealmangoosey"
-          />
+          <Button asChild variant="outline" className="font-minecraft">
+            <a href="https://dsc.gg/fruitsnacks" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+              <MessageSquare className="h-4 w-4" />
+              Suggest Features
+            </a>
+          </Button>
         </div>
+        
+        {isLoading ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[1, 2, 3].map((i) => (
+              <div key={i} className="space-y-4">
+                <Skeleton className="h-48 w-full" />
+                <Skeleton className="h-8 w-3/4" />
+                <Skeleton className="h-4 w-full" />
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projects?.map((project) => (
+              <ProjectCard 
+                key={project.slug}
+                title={project.title}
+                description={project.description}
+                imageUrl={`https://via.placeholder.com/800x400/1a1f2c/ffffff?text=${encodeURIComponent(project.title)}`}
+                downloads={project.downloads}
+                url={`https://modrinth.com/plugin/${project.slug}`}
+              />
+            ))}
+          </div>
+        )}
       </main>
       
       <Footer />
