@@ -50,3 +50,22 @@ export const fetchModrinthStats = async (username: string): Promise<ModrinthUser
     };
   }
 };
+
+// Add the missing fetchModrinthUserProjects function
+export const fetchModrinthUserProjects = async (username: string): Promise<ModrinthProject[]> => {
+  try {
+    const response = await fetch(`https://api.modrinth.com/v2/user/${username}/projects`);
+    if (!response.ok) throw new Error('Failed to fetch projects');
+    const projects = await response.json();
+    
+    return projects.map((project: any) => ({
+      downloads: project.downloads || 0,
+      title: project.title,
+      description: project.description,
+      slug: project.slug
+    }));
+  } catch (error) {
+    console.error('Error fetching Modrinth projects:', error);
+    return [];
+  }
+};
