@@ -23,7 +23,7 @@ const About = () => {
           
           <div className="prose dark:prose-invert max-w-none">
             <p className="text-lg leading-relaxed mb-6">
-              Hello! I'm TheRealMangoosey, a Minecraft plugin developer creating high-quality tools for the Minecraft community.
+              Hello! I'm TheRealMangoosey, a 14-year-old Minecraft plugin developer and first-time developer creating high-quality tools for the Minecraft community.
             </p>
             
             <p className="text-lg leading-relaxed mb-6">
@@ -34,7 +34,7 @@ const About = () => {
             <h2 className="text-2xl font-bold mt-8 mb-4">Development Philosophy</h2>
             
             <p className="text-lg leading-relaxed mb-6">
-              When creating plugins, I follow these core principles:
+              As a young developer, I follow these core principles:
             </p>
             
             <ul className="list-disc pl-6 mb-6 space-y-2">
@@ -45,7 +45,7 @@ const About = () => {
                 <strong>User-Friendly:</strong> Easy installation and configuration for server administrators.
               </li>
               <li className="text-lg">
-                <strong>Quality:</strong> Creating plugins that improve your Minecraft experience.
+                <strong>Learning:</strong> Continuously improving my skills and creating better plugins.
               </li>
             </ul>
             
