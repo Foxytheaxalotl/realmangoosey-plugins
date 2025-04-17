@@ -53,11 +53,16 @@ const About = () => {
             
             <p className="text-lg leading-relaxed mb-6">
               I'm always open to feedback, suggestions, or just chatting about Minecraft and plugin development.
-              Feel free to reach out through my Modrinth profile:
+              The best way to reach me is through Discord:
             </p>
             
             <div className="flex flex-wrap gap-4 mb-8">
               <Button asChild>
+                <a href="https://dsc.gg/fruitsnacks" target="_blank" rel="noopener noreferrer">
+                  Discord
+                </a>
+              </Button>
+              <Button asChild variant="outline">
                 <a href="https://modrinth.com/user/therealmangoosey" target="_blank" rel="noopener noreferrer">
                   <div className="w-4 h-4 bg-white text-modrinth-green flex items-center justify-center rounded-sm font-bold mr-2">M</div>
                   Modrinth
