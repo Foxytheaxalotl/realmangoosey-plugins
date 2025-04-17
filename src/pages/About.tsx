@@ -23,8 +23,7 @@ const About = () => {
           
           <div className="prose dark:prose-invert max-w-none">
             <p className="text-lg leading-relaxed mb-6">
-              Hello! I'm TheRealMangoosey, a Minecraft plugin developer focused on creating high-quality, 
-              free tools for the Minecraft community.
+              Hello! I'm TheRealMangoosey, a Minecraft plugin developer creating high-quality tools for the Minecraft community.
             </p>
             
             <p className="text-lg leading-relaxed mb-6">
@@ -46,7 +45,7 @@ const About = () => {
                 <strong>User-Friendly:</strong> Easy installation and configuration for server administrators.
               </li>
               <li className="text-lg">
-                <strong>Free:</strong> Available to everyone without any cost.
+                <strong>Quality:</strong> Creating plugins that improve your Minecraft experience.
               </li>
             </ul>
             
@@ -60,7 +59,7 @@ const About = () => {
             <div className="flex flex-wrap gap-4 mb-8">
               <Button asChild>
                 <a href="https://modrinth.com/user/therealmangoosey" target="_blank" rel="noopener noreferrer">
-                  <div className="w-4 h-4 bg-white text-modrinth-purple flex items-center justify-center rounded-sm font-bold mr-2">M</div>
+                  <div className="w-4 h-4 bg-white text-modrinth-green flex items-center justify-center rounded-sm font-bold mr-2">M</div>
                   Modrinth
                 </a>
               </Button>
