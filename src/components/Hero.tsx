@@ -18,8 +18,8 @@ const Hero = () => {
       
       <div className="container py-16 md:py-24 relative z-10">
         <div className="max-w-3xl mx-auto text-center animate-fade-in">
-          <h1 className="font-minecraft text-4xl md:text-5xl lg:text-6xl tracking-tight mb-6">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-modrinth-green to-modrinth-vivid">
+          <h1 className="font-minecraft text-4xl md:text-5xl lg:text-6xl tracking-tight mb-6 mx-auto">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-modrinth-green to-modrinth-vivid inline-block text-center">
               TheRealManjuicy's Plugins
             </span>
           </h1>
