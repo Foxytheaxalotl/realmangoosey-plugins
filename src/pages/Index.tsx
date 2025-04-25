@@ -1,5 +1,5 @@
 
-import { useState, useEffect } from 'react';
+import { useQuery } from '@tanstack/react-query';
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import FeaturedProject from "@/components/FeaturedProject";
@@ -9,18 +9,14 @@ import Footer from "@/components/Footer";
 import { fetchModrinthUserProjects } from "@/utils/modrinth";
 
 const Index = () => {
-  const [projects, setProjects] = useState<any[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const { data: projects, isLoading } = useQuery({
+    queryKey: ['modrinth-projects'],
+    queryFn: () => fetchModrinthUserProjects('therealmangoosey'),
+    refetchInterval: 300000, // Refetch every 5 minutes
+  });
 
-  useEffect(() => {
-    const loadProjects = async () => {
-      const data = await fetchModrinthUserProjects('therealmangoosey');
-      setProjects(data);
-      setIsLoading(false);
-    };
-
-    loadProjects();
-  }, []);
+  // Get the most downloaded project as featured
+  const featuredProject = projects?.sort((a, b) => b.downloads - a.downloads)[0];
 
   return (
     <div className="flex min-h-screen flex-col bg-background">
@@ -33,21 +29,14 @@ const Index = () => {
           <div className="container py-16 text-center">
             <p className="font-minecraft text-modrinth-green">Loading projects...</p>
           </div>
-        ) : projects.length > 0 ? (
+        ) : featuredProject ? (
           <FeaturedProject 
-            title={projects[0].title}
-            description={projects[0].description || "A free plugin that adds new functionality to your Paper MC server."}
-            downloads={projects[0].downloads}
-            url={`https://modrinth.com/plugin/${projects[0].slug}`}
+            title={featuredProject.title}
+            description={featuredProject.description}
+            downloads={featuredProject.downloads}
+            url={`https://modrinth.com/plugin/${featuredProject.slug}`}
           />
-        ) : (
-          <FeaturedProject 
-            title="Paper Plugin"
-            description="A free plugin that adds new functionality to your Paper MC server."
-            downloads={0}
-            url="https://modrinth.com/user/therealmangoosey"
-          />
-        )}
+        ) : null}
         
         <AboutSection />
         <ContactSection />
