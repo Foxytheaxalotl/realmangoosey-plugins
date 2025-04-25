@@ -22,11 +22,11 @@ const Index = () => {
     <div className="flex min-h-screen flex-col bg-background">
       <Navbar />
       
-      <main>
+      <main className="flex-1">
         <Hero />
         
         {isLoading ? (
-          <div className="container py-16 text-center">
+          <div className="container px-4 py-12 text-center animate-pulse">
             <p className="font-minecraft text-modrinth-green">Loading projects...</p>
           </div>
         ) : featuredProject ? (
