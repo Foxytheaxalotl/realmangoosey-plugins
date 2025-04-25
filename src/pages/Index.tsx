@@ -3,6 +3,7 @@ import { useQuery } from '@tanstack/react-query';
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import FeaturedProject from "@/components/FeaturedProject";
+import ProjectCarousel from "@/components/ProjectCarousel";
 import AboutSection from "@/components/AboutSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
@@ -38,6 +39,7 @@ const Index = () => {
           />
         ) : null}
         
+        <ProjectCarousel />
         <AboutSection />
         <ContactSection />
       </main>
